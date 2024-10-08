@@ -1,12 +1,14 @@
-import { useContext, createContext } from "react";
+import { useContext, createContext, useState } from "react";
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const greeting = "hello";
-  return (
-    <AppContext.Provider value={{ greeting }}>{children}</AppContext.Provider>
-  );
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const toggleDarkTheme = () => {
+    const newDarkTheme = !isDarkTheme;
+    setIsDarkTheme(newDarkTheme);
+  };
+  return <AppContext.Provider value={{}}>{children}</AppContext.Provider>;
 };
 
 export const useGlobalContext = () => useContext(AppContext);
