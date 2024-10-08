@@ -4,14 +4,16 @@ import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
 
 const ThemeToggle = () => {
+  const { isDarkTheme, toggleDarkTheme } = useGlobalContext();
   return (
     <section className='toggle-container'>
-      <button className='dark-toggle'>
-        <CiLight className='toggle-icon' />
-        <MdDarkMode className='toggle-icon' />
+      <button className='dark-toggle' onClick={toggleDarkTheme}>
+        {isDarkTheme ? (
+          <CiLight className='toggle-icon' />
+        ) : (
+          <MdDarkMode className='toggle-icon' />
+        )}
       </button>
-
-      <h2>ThemeToggle</h2>
     </section>
   );
 };
