@@ -9,9 +9,9 @@ const ThemeToggle = () => {
     <section className='toggle-container'>
       <button className='dark-toggle' onClick={toggleDarkTheme}>
         {isDarkTheme ? (
-          <CiLight className='toggle-icon' />
+          <CiLight className='toggle-icon-light dark-theme ' />
         ) : (
-          <MdDarkMode className='toggle-icon' />
+          <MdDarkMode className='toggle-icon-dark ' />
         )}
       </button>
     </section>
