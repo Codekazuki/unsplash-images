@@ -1,4 +1,5 @@
 import React, { useContext, createContext, useState } from "react";
+import { toast } from "react-toastify";
 
 const AppContext = createContext();
 
@@ -8,6 +9,7 @@ export const AppProvider = ({ children }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(search);
+    toast.success("hiiii");
 
     setSearch("");
   };
