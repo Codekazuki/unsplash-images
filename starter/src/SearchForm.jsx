@@ -3,11 +3,12 @@ import React, { useState } from "react";
 
 const SearchForm = () => {
   // const { search, setSearch, handleSubmit } = useGlobalContext();
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(search);
-    setSearch("");
+    const searchValue = e.target.elements.search.value;
+    if (!searchValue) return;
+    console.log(searchValue);
   };
   return (
     <section className='title'>
@@ -15,12 +16,10 @@ const SearchForm = () => {
       <form className='search-form' onSubmit={handleSubmit}>
         <input
           placeholder='cat'
-          id='id'
-          value={search}
           type='text'
           name='search'
           className='form-input search-input'
-          onChange={(e) => setSearch(e.target.value)}
+          // onChange={(e) => setSearch(e.target.value)}
         />
         <button type='submit'> search </button>
       </form>
