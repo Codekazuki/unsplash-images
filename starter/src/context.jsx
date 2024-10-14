@@ -3,7 +3,7 @@ import React, { useContext, createContext, useState } from "react";
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  const [searchTerm, setSearchTerm] = useState("cat");
+  const [searchTerm, setSearchTerm] = useState("Ronaldo");
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleDarkTheme = () => {
