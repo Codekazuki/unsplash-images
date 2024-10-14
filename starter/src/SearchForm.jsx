@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 
 const SearchForm = () => {
@@ -8,6 +7,7 @@ const SearchForm = () => {
     const searchValue = e.target.elements.search.value;
     if (!searchValue) return;
     setSearchTerm(searchValue);
+    e.target.elements.search.value = "";
   };
   return (
     <section className='title'>
