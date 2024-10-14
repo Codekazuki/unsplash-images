@@ -7,7 +7,7 @@ const url =
 const Gallery = () => {
   const { searchTerm } = useGlobalContext();
   const response = useQuery({
-    queryKey: ["images"],
+    queryKey: ["images", searchTerm],
     queryFn: async () => {
       const result = await axios.get(`${url}&query=${searchTerm}`);
       return result.data;
@@ -16,14 +16,14 @@ const Gallery = () => {
   if (response.isLoading) {
     return (
       <section className='image-container'>
-        <h4>Loading...</h4>
+        <h4>Fetching Image...</h4>
       </section>
     );
   }
   if (response.isError) {
     return (
       <section className='image-container'>
-        <h4>Error occured</h4>
+        <h4>An Error Occured</h4>
       </section>
     );
   }
