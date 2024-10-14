@@ -3,6 +3,7 @@ import React, { useContext, createContext, useState } from "react";
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
+  const [searchTerm, setSearchTerm] = useState("cat");
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   const toggleDarkTheme = () => {
@@ -12,7 +13,9 @@ export const AppProvider = ({ children }) => {
     body.classList.toggle("dark-theme", newDarkTheme);
   };
   return (
-    <AppContext.Provider value={{ isDarkTheme, toggleDarkTheme }}>
+    <AppContext.Provider
+      value={{ isDarkTheme, toggleDarkTheme, searchTerm, setSearchTerm }}
+    >
       {children}
     </AppContext.Provider>
   );
