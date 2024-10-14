@@ -38,7 +38,7 @@ const Gallery = () => {
   return (
     <section className='image-container'>
       {results.map((item) => {
-        const url = item?.urls?.regular;
+        const url = item?.urls?.full;
         return (
           <img
             src={url}
