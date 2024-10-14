@@ -329,7 +329,8 @@ Search Form
 ========
 */
 .title {
-  color: var(--primary-500);
+  color: var(--primary-600);
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .search-form {
   width: var(--view-width);
@@ -353,7 +354,7 @@ Search Form
   border-radius: 0;
 }
 .search-form .btn:hover {
-  background: var(--primary-300);
+  background: var(--primary-100);
   color: var(--black);
 }
 
@@ -373,6 +374,7 @@ Gallery
 
 .image-container .img {
   height: 10rem;
+  border-radius: 10px;
 }
 
 @media (min-width: 768px) {
