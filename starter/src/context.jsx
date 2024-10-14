@@ -3,10 +3,15 @@ import React, { useContext, createContext, useState, useEffect } from "react";
 const AppContext = createContext();
 const getInitialDarkMode = () => {
   const prefersDarkMode = window.matchMedia(
-    "(prefers-color-schem:dark)"
+    "(prefers-color-scheme:dark)"
   ).matches;
-  console.log(prefersDarkMode);
-  return prefersDarkMode;
+  const storedDarkMode = localStorage.getItem("darkTheme");
+
+  if (storedDarkMode === null) {
+    return prefersDarkMode;
+  }
+
+  return storedDarkMode === "true";
 };
 export const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState("lion");
