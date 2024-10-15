@@ -14,7 +14,7 @@ const SearchForm = () => {
       <h1 className='title'>Search and download High Quality Images</h1>
       <form className='search-form' onSubmit={handleSubmit}>
         <input
-          placeholder='cat'
+          placeholder='lion'
           type='text'
           name='search'
           className='form-input search-input'
